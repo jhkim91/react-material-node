@@ -8,11 +8,11 @@ class Customer extends Component {
             <>
                 <TableRow>
                     <TableCell>{this.props.id}</TableCell>
-                    <TableCell><img src={this.props.images} alt="profile"/></TableCell>
+                    <TableCell><img src={this.props.image} alt="profile"/></TableCell>
                     <TableCell>{this.props.name}({this.props.id})</TableCell>
-                    <TableCell>birthday={this.props.birthday}</TableCell>
-                    <TableCell>gender={this.props.gender}</TableCell>
-                    <TableCell>job={this.props.job}</TableCell>
+                    <TableCell>{this.props.birthday}</TableCell>
+                    <TableCell>{this.props.gender}</TableCell>
+                    <TableCell>{this.props.job}</TableCell>
                 </TableRow>
                 {/*<div>
                     <CustomerProfile id={this.props.id} image={this.props.images} name={this.props.name}/>
