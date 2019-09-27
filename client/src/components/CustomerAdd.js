@@ -16,6 +16,7 @@ class CustomerAdd extends Component {
         this.addCustomer()
             .then((response) => {
                 console.log(response.data);
+                this.props.stateRefresh();
             });
         this.setState({
             file: null,
@@ -25,7 +26,6 @@ class CustomerAdd extends Component {
             job: '',
             fileName: ''
         });
-        window.location.reload()
     };
 
     handleFileChange = (e) => {
@@ -45,7 +45,7 @@ class CustomerAdd extends Component {
         const url = '/api/customers';
         const formData = new FormData();
         formData.append('image', this.state.file);
-        formData.append('userName', this.state.userName);
+        formData.append('name', this.state.userName);
         formData.append('birthday', this.state.birthday);
         formData.append('gender', this.state.gender);
         formData.append('job', this.state.job);
